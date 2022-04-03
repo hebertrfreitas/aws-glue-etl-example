@@ -40,6 +40,7 @@ source venv
 Em seguida podemos executar o script
 
 ```python
+pip install -r requirements.txt
 python csv_to_parquet.py
 ```
 
