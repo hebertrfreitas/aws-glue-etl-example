@@ -6,7 +6,7 @@ O objetivo deste projeto é fornecer um exemplo de job etl do AWS Glue.
 
 Neste exemplo, nossa fonte de dados será um bucket S3 com um arquivo no formato [parquet](https://parquet.apache.org/).
 
-Nosso destino será um banco de dados postgres provisionado através de um AWS RDS. 
+Nosso destino será uma tabela do DynamoDB. 
 
 ### Requisitos
 - python
