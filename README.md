@@ -11,7 +11,7 @@ Nosso destino será uma tabela do DynamoDB.
 ### Organização das pastas
 
  - parquet/ = script para converter um csv para parquet
- - terraform/ = arquivos para provisionar a infraestrutura automaticamente via terraform
+ - iac/ = arquivos terraform para provisionar a infraestrutura automaticamente
 
 
 ### Requisitos

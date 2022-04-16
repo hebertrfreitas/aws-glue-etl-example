@@ -1,0 +1,5 @@
+username, email, last_access, is_admin, app_version
+hebert, hebert@email.com, 2022-04-02, 1, v1.0
+jorge, jorge@email.com, 2021-12-03, 0, v1.0
+marcos, marcos@email.com,,1,v1.1
+fernando,fernando@email.com, 2022-01-01, 0, v1.1
