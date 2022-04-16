@@ -65,7 +65,7 @@ Serão provisionados os seguintes recursos:
 
 É necessário ter as credenciais da aws criadas no seu profile em `~/.aws/credentials`. Recomendamos que você configure o aws cli na sua máquina seguindo o [passo a passo da aws](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
 
-Para provisionar a infraestrutura execute os seguintes comandos
+Para provisionar a infraestrutura execute os seguintes comandos entre na pasta `/iac`
 
 ```shell
 terraform init
