@@ -200,3 +200,5 @@ override.tf.json
 .terraformrc
 terraform.rc
 
+#Intellij files
+.idea

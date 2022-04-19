@@ -41,8 +41,8 @@ Para executar um script em python recomendamos que seja usado um virtual environ
 ```shell
 cd parquet
 pip install virtualenv #caso não tenha o virtual environment instalado
-python virtualenv venv
-source venv
+python3 -m venv .
+source bin/activate
 ```
 
 Em seguida podemos executar o script

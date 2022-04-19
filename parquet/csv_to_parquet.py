@@ -3,7 +3,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 csv_file = 'input.csv'
-parquet_file = '../terraform/output.parquet'
+parquet_file = '../iac/output.parquet'
 chunksize = 100_000
 
 csv_stream = pd.read_csv(csv_file, sep=',', chunksize=chunksize, low_memory=False)
