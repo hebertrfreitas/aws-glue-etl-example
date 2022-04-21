@@ -111,3 +111,9 @@ Alguns detalhes sobre o script
  00. `amazon/aws-glue-libs:glue_libs_3.0.0_image_01` imagem docker disponibilizada pela aws contendo tudo necessário para executar um script do glue localmente.
 
  00. `spark-submit /home/glue_user/workspace/glue_job_script.py --JOB_NAME "test_job"` comando que será executado dentro do container, `spark-submit` é um executável que aceita um script como parâmetro, este executável dispara uma aplicação spark dentro do container. o parâmetro `--JOB_NAME` é um dos parâmetros esperados dentro do script.
+
+<br/>
+Importante entender que mesmo rodando o job localmente, os recursos da aws consumidos como fonte e destino(no nosso caso do S3 como fonte e o dynamo como destino) serão provinentes da aws.
+
+TODO: configurar um exemplo usando a localstack
+
