@@ -58,62 +58,35 @@ resource "aws_glue_catalog_table" "s3_input_table" {
   }
 }
 
+#upload a python job script to s3
+resource "aws_s3_bucket_object" "s3_upload_glue_job" {
+  bucket = aws_s3_bucket.source_bucket.id
+  key    = "glue_job_script.py"
+  source = "../glue_job/glue_job_script.py"
+  etag   = filemd5("../glue_job/glue_job_script.py")
+}
 
 
-
-
-
-# resource "aws_iam_policy_document" "glue-crawler-s3-policy-document" {
-
-
-#   statement {
-#     version = "2012-10-17"
-#     effect  = "Allow"
-#     actions = [
-#       "s3:GetObject",
-#       "s3:PutObject"
-#     ]
-#     resources = ["${aws_s3_bucket_object.parquet_file.arn}/*"]
-
-#   }
-
-
+#default role for glue (this policy is extracted to aws console, original policy name is AWSGlueServiceRole)
+# resource "aws_iam_role" "glue_job_iam_role" {
+#   name = "glue_job_s3_to_dynamo-role"
+#   assume_role_policy = 
+#   policy = 
 # }
 
 
+resource "aws_glue_job" "glue_job" {
+  name     = "glue_job_s3_to_dynamo"
+  role_arn = aws_iam_role.example.arn
+  
+  default_arguments = {
+    "--job-language" = "python"
+  }
 
 
+  command {
+    script_location = "s3://${aws_s3_bucket_object.s3_upload_glue_job.bucket}/${aws_s3_bucket_object.s3_upload_glue_job.key}"
+    python_version = 3
+  }
+}
 
-
-# resource "aws_iam_role" "aws-glue-role-s3-crawler" {
-#   name = "AWSGlueServiceRole-s3_crawler_input"
-
-#     assume_role_policy = <<EOF
-# {
-#   "Version": "2012-10-17",
-#   "Statement": [
-#     {
-#       "Action": "sts:AssumeRole",
-#       "Principal": {
-#         "Service": "glue.amazonaws.com"
-#       },
-#       "Effect": "Allow",
-#       "Sid": ""
-#     }
-#   ]
-# }
-# EOF
-# }  
-
-# }
-
-
-# resource "aws_glue_crawler" "s3_crawler_input" {
-#   database_name = aws_glue_catalog_database.s3_database_input.name
-#   name          = "s3_crawler_input"
-#   role          = aws_iam_role.example.arn
-
-#   s3_target {
-#     path = "s3://${aws_s3_bucket.source_bucket.bucket}"
-#   }
-# }
