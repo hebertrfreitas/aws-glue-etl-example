@@ -1,6 +1,6 @@
-### Informações sobre o aws glue
+## Informações sobre o aws glue
 
-#### Introdução
+### Introdução
 
 Entre as varias funcionalidades fornecidas pelo AWS GLUE, os jobs se destinam a fazer o papel de ETL(Extract, Transform and Load).
 
@@ -29,7 +29,7 @@ A última etapa de um job é o destino onde os dados serão inseridos.
 Uma vez que o dado foi carregado e transformado resta fazer o carregamento dos mesmos em algum local, e aqui novamente temos uma gama grande de opções como bases de dados, streaming, etc.
 
 
-#### Como testar o script localmente
+### Como testar o script localmente
 
 A aws fornece algumas possibilidades para desenvolver e testar o script na sua [documentação](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-libraries.html), para este exemplo optei por utilizar a [imagem docker](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-libraries.html#develop-local-docker-image) disponibilizada pela aws para subir um ambiente pyspark com suporte ao glue localmente.
 
@@ -64,7 +64,7 @@ Importante entender que mesmo rodando o job localmente, os recursos da aws consu
 TODO: configurar um exemplo usando a localstack
 
 
-#### Como construir um job
+### Como construir um job
 
 Atualmente a aws fornece uma interface visual chamada Glue Studio, onde é possível construir o job iteragindo com componentes visuais e ao final a aws gera um script do mesmo para você.
 
